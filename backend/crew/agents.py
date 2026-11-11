@@ -14,7 +14,7 @@ class OptimizationItem(BaseModel):
     has_side_effects: bool
     signature_preserved: bool
 
-class SecArchCrew:
+class SecAuditCrew:
     """
     CrewAI Multi-Agent Specialist Squad (Unit 5 Syllabus Implementation):
     1. Systems Architect (POSIX & Modern Concurrency standards)
@@ -36,7 +36,7 @@ class SecArchCrew:
         """
         # 1. Systems Architect Analysis
         architect_prompt = f"""
-You are the Systems Architect agent for SecArch.
+You are the Systems Architect agent for SecAudit.
 Review the following project context and POSIX/System reference specs:
 
 [PROJECT CONTEXT]:
@@ -60,7 +60,7 @@ Provide an architectural evaluation:
 
         # 2. Security Auditor Analysis
         security_prompt = f"""
-You are the Security Auditor agent for SecArch.
+You are the Security Auditor agent for SecAudit.
 Review the project files and ingested CVE/CIS benchmarks:
 
 [PROJECT CONTEXT]:
@@ -84,7 +84,7 @@ Perform a rigorous security audit:
 
         # 3. Performance Optimizer Analysis
         optimizer_prompt = f"""
-You are the Performance Optimizer agent for SecArch.
+You are the Performance Optimizer agent for SecAudit.
 Your goal is to inspect code blocks in the project and identify actionable, high-performance optimizations (SIMD vectorization, avoiding unnecessary syscalls/copies, cache locality, non-blocking I/O).
 
 [PROJECT CONTEXT]:

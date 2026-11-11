@@ -1,8 +1,8 @@
-# 🛡️ sec_audit (SecArch)
+# 🛡️ sec_audit (SecAudit)
 
 **Autonomous AI-Powered System Architecture & Security Auditor**
 
-SecArch (`sec_audit`) is an advanced agentic security and systems architecture audit platform. It couples **LangGraph stateful workflow orchestration**, **CrewAI specialist personas**, **Hybrid RAG (Dense BAAI/bge-small-en-v1.5 + Sparse BM25)**, and an **AST Deterministic Safety Gate** to inspect codebases, detect security vulnerabilities, audit POSIX conformance, and safely generate verified code patches.
+SecAudit (`sec_audit`) is an advanced agentic security and systems architecture audit platform. It couples **LangGraph stateful workflow orchestration**, **CrewAI specialist personas**, **Hybrid RAG (Dense BAAI/bge-small-en-v1.5 + Sparse BM25)**, and an **AST Deterministic Safety Gate** to inspect codebases, detect security vulnerabilities, audit POSIX conformance, and safely generate verified code patches.
 
 ---
 
@@ -111,7 +111,7 @@ SecArch (`sec_audit`) is an advanced agentic security and systems architecture a
 │   │   └── types/                 # TypeScript interfaces
 │   ├── package.json
 │   └── tsconfig.json
-├── SecArch_Colab_Ingest.ipynb     # Google Colab GPU notebook for RAG indexing
+├── SecAudit_Colab_Ingest.ipynb    # Google Colab GPU notebook for RAG indexing
 ├── requirements.txt               # Python backend dependencies
 ├── start_backend.sh               # Backend startup script
 ├── start_frontend.sh              # Frontend startup script
@@ -195,7 +195,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 The pre-indexed corpus includes CIS benchmarks, OWASP cheatsheets, and POSIX manuals. To re-index or add custom security standards:
 
-1. Open `SecArch_Colab_Ingest.ipynb` in [Google Colab](https://colab.research.google.com/).
+1. Open `SecAudit_Colab_Ingest.ipynb` in [Google Colab](https://colab.research.google.com/).
 2. Run the notebook using a free **T4 GPU runtime**.
 3. Download the generated `chroma_db/` and `bm25_index.pkl` into the local `data/` directory.
 
@@ -203,7 +203,7 @@ The pre-indexed corpus includes CIS benchmarks, OWASP cheatsheets, and POSIX man
 
 ## 🔒 Safety & AST Safeguards
 
-SecArch incorporates safety-by-design for automated patch proposals:
+SecAudit incorporates safety-by-design for automated patch proposals:
 - **AST Parsing Verification**: Validates AST grammar and rejects code containing syntax errors.
 - **Signature Invariance**: Verifies that function arguments, return signatures, and arities match existing interfaces.
 - **Purity Checks**: Flags unauthorized global mutations, unexpected lifecycle changes (`fork`, `kill`, `execve`), or privilege tampering.

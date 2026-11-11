@@ -13,11 +13,11 @@ from backend.scanner.workspace_scanner import WorkspaceScanner
 from backend.scanner.fs_picker import router as fs_router
 from backend.core.gemini_client import GeminiEngine
 from backend.rag.hybrid_retriever import HybridRetriever
-from backend.crew.agents import SecArchCrew
+from backend.crew.agents import SecAuditCrew
 from backend.graph.orchestrator import AuditGraphOrchestrator
 from backend.history.session_store import SessionStore
 
-app = FastAPI(title="SecArch Architecture & Security Auditor API", version="1.0.0")
+app = FastAPI(title="SecAudit Architecture & Security Auditor API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -41,9 +41,9 @@ async def startup_event():
     global hybrid_retriever, audit_orchestrator
     try:
         hybrid_retriever = HybridRetriever()
-        crew = SecArchCrew(gemini_engine=gemini_engine)
+        crew = SecAuditCrew(gemini_engine=gemini_engine)
         audit_orchestrator = AuditGraphOrchestrator(retriever=hybrid_retriever, crew=crew)
-        print("[✔] SecArch Core Systems & Graph Orchestrator Initialized.")
+        print("[✔] SecAudit Core Systems & Graph Orchestrator Initialized.")
     except Exception as e:
         print(f"[!] Warning during model init: {e}")
 

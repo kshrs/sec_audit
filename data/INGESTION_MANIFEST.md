@@ -1,4 +1,4 @@
-# 🛡️ SecArch Knowledge Base Ingestion Manifest
+# 🛡️ SecAudit Knowledge Base Ingestion Manifest
 
 **Generated on:** 2026-11-09 05:42:21
 **Total Ingested Chunks:** `18,814`

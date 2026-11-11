@@ -21,7 +21,7 @@ class SessionStore:
 
         # 2. Save Markdown Report
         md_path = run_folder / "REPORT.md"
-        md_content = state_data.get("final_report_md", "# SecArch Audit Report\nNo data.")
+        md_content = state_data.get("final_report_md", "# SecAudit Audit Report\nNo data.")
         md_path.write_text(md_content, encoding="utf-8")
 
         return run_folder

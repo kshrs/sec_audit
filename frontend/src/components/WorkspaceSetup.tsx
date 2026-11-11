@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { FolderSearch, Sparkles, ArrowRight, ShieldCheck, Cpu, Code2, AlertCircle, FolderOpen } from "lucide-react";
 import { FileTreeViewer } from "./FileTree";
 import { FolderPickerModal } from "./FolderPickerModal";
-import { ScanResponse } from "@/types/secarch";
+import { ScanResponse } from "@/types/secaudit";
 import axios from "axios";
 
 interface WorkspaceSetupProps {

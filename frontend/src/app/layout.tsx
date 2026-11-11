@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SecArch — Local-First Systems & Architecture Auditor",
+  title: "SecAudit — Local-First Systems & Architecture Auditor",
   description: "Terminal-centric DevOps and Security Agent auditing POSIX conformance, CVEs, and modern architecture.",
 };
 

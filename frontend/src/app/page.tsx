@@ -73,7 +73,7 @@ export default function Home() {
           </div>
           <div>
             <h1 className="font-semibold text-sm tracking-tight text-zinc-100 flex items-center gap-2">
-              SecArch
+              SecAudit
               <span className="text-[10px] uppercase font-mono px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-400 border border-zinc-700/60">
                 v1.0 Local-First
               </span>

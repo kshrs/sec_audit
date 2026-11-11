@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { X, History, Clock, FileText, ChevronRight, CheckCircle2, ShieldAlert } from "lucide-react";
 import axios from "axios";
-import { AuditHistoryItem } from "@/types/secarch";
+import { AuditHistoryItem } from "@/types/secaudit";
 
 interface HistoryDrawerProps {
   isOpen: boolean;

@@ -18,7 +18,13 @@ class HybridRetriever:
         
         # 1. Load ChromaDB Dense Vector Store
         self.chroma_client = chromadb.PersistentClient(path=str(settings.CHROMA_DB_PATH))
-        self.collection = self.chroma_client.get_collection("secarch_corpus")
+        try:
+            self.collection = self.chroma_client.get_collection("secaudit_corpus")
+        except Exception:
+            try:
+                self.collection = self.chroma_client.get_collection("secarch_corpus")
+            except Exception:
+                self.collection = self.chroma_client.get_or_create_collection("secaudit_corpus")
         
         # 2. Load Local Dense Embedding Model
         self.embed_model = SentenceTransformer(settings.EMBEDDING_MODEL, device="cpu")
@@ -87,7 +93,7 @@ class HybridRetriever:
                 "score": round(score, 5),
                 "title": self.metadatas[idx].get("title", "Standard Ref"),
                 "category": self.metadatas[idx].get("category", "General"),
-                "source_repo": self.metadatas[idx].get("source_repo", "SecArch Core"),
+                "source_repo": self.metadatas[idx].get("source_repo", "SecAudit Core"),
                 "content": self.documents[idx]
             })
             

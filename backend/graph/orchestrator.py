@@ -3,7 +3,7 @@ from typing import Dict, Any
 from langgraph.graph import StateGraph, END
 from backend.graph.state import AuditState
 from backend.rag.hybrid_retriever import HybridRetriever
-from backend.crew.agents import SecArchCrew
+from backend.crew.agents import SecAuditCrew
 from backend.scanner.ast_guard import ASTSafetyGuard
 from backend.crew.auto_patcher import AutoPatcher
 
@@ -13,7 +13,7 @@ class AuditGraphOrchestrator:
     LangGraph Stateful Agentic Orchestrator with Reflection & Multi-Agent Delegation.
     """
 
-    def __init__(self, retriever: HybridRetriever, crew: SecArchCrew):
+    def __init__(self, retriever: HybridRetriever, crew: SecAuditCrew):
         self.retriever = retriever
         self.crew = crew
         self.graph = self._build_graph()
@@ -102,7 +102,7 @@ class AuditGraphOrchestrator:
 
     def synthesis_node(self, state: AuditState) -> Dict[str, Any]:
         """Formats the unified audit and modernization markdown report."""
-        report = f"""# 🛡️ SecArch Audit Report
+        report = f"""# 🛡️ SecAudit Audit Report
 **Run Timestamp:** {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 **Project Audited:** `{state.get('project_path', 'Local Workspace')}`
 

@@ -14,7 +14,7 @@ import {
 import "@xyflow/react/dist/style.css";
 import { AgentNode, AgentNodeData } from "./AgentNode";
 import { Terminal, Database, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
-import { AuditStreamEvent } from "@/types/secarch";
+import { AuditStreamEvent } from "@/types/secaudit";
 
 const nodeTypes = {
   agentNode: AgentNode,
